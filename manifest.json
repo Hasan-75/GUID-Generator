@@ -1,0 +1,35 @@
+{
+	"manifest_version" : 3,
+	"name": "GUID Generator",
+	"description": "This is a guid generator",
+	"version": "1.0",
+
+	"action": {
+		"default_icon": "images/icon.png",
+		"icons": {
+			"16": "icon16.png",
+			"48": "icon48.png",
+			"128": "icon128.png"
+		}
+	},
+
+    "content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+				],
+			"js": ["content.js"]
+		}
+    ],
+
+	"background" : {
+		"service_worker" : "events.js"
+	},
+
+	"permissions" : [
+		"contextMenus",
+        "clipboardWrite",
+		"notifications",
+		"tabs"
+	]
+}
